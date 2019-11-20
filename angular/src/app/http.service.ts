@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http';
 export class HttpService {
 
   constructor(private _http: HttpClient) { }
-  newPatientMaster(start){
+  newMaster(start){
     return this._http.post('/api/home/new', start)
   }
 }
