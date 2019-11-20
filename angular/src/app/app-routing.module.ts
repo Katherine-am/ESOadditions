@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'forms-home', loadChildren: () => import('./forms/forms.module').then(m => m.FormsModule) }, 
   { path: 'billing-home', loadChildren: () => import('./billing/billing.module').then(m => m.BillingModule) }, 
   { path: 'signatures-home', loadChildren: () => import('./signatures/signatures.module').then(m => m.SignaturesModule)},
-  { path: '', pathMatch: 'full', redirectTo: '/patient-home' },
+  { path: '', pathMatch: 'full', redirectTo: '/incident-home' },
 ];
 
 @NgModule({
