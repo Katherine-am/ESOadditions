@@ -15,3 +15,9 @@ const FormsSchema = new mongoose.Schema({
     infuenzaScreening: [InfluenzaScreeningSchema],
     syndromicSurveillanceOverdose: [SyndromicSurveillanceOverdoseSchema]
 })
+
+const Forms = new mongoose.Schema('forms', FormsSchema);
+
+module.exports = {
+    Forms
+}
