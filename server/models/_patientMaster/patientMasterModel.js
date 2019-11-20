@@ -2,7 +2,7 @@
   mongoose.connect('mongodb://localhost/ESOadditions', { useNewUrlParser: true });
 
   const PatientSchema = new mongoose.Schema({
-      name: { type: String, required: true, minlength: 3 },
+      name: { type: String },
       //   demographics: [DemographicsSchema],
       //   contact: [ContactSchema],
       //   history: { type: String },
