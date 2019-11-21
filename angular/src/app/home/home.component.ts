@@ -2,7 +2,6 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { HttpService } from '../http.service';
 import { Router, ActivatedRoute } from '@angular/router';
 // import { EventEmitter } from 'events';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

@@ -15,6 +15,7 @@ export class HttpService {
     console.log(id)
     return this._http.get(`/api/${id}`);
   }
+
   editpatient(editpatient) {
     return this._http.put(`/api/${editpatient._id}`, editpatient);
   }
