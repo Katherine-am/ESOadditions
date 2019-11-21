@@ -2,6 +2,10 @@
     margin-top: 2vw;
 }
 
+.align {
+    padding: 0.8vw 10vw;
+}
+
 .header-bar {
     padding: 0.8vw 10vw;
     border-top: 1px solid lightgray;
@@ -39,7 +43,7 @@ small {
     right: 0;
     top: 0;
     width: 100%;
-    height: 85vh;
+    height: 90vh;
 }
 
 .form-control-plaintext {
@@ -48,4 +52,12 @@ small {
 
 .form-group {
     margin: 2vw 0;
+}
+
+.col-2 {
+    margin: 0;
+    padding: 0;
+    background-color: #ecf0f1;
+    height: 100vh;
+    border-right: 1px solid lightgray;
 }
