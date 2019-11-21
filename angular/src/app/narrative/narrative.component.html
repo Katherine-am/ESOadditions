@@ -1,1 +1,114 @@
-<p>narrative works!</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<div class="row">
+    <div class="col-2">
+        <div id="forms" class="list-group">
+            <a class="list-group-item list-group-item-action" href="#impression">IMPRESSION</a>
+            <a class="list-group-item list-group-item-action" href="#signsSymptoms">SIGNS/SYMPTONS</a>
+            <a class="list-group-item list-group-item-action" href="#complaint">COMPLAINT</a>
+            <a class="list-group-item list-group-item-action" href="#injuries">INJURIES</a>
+            <a class="list-group-item list-group-item-action" href="#factors">FACTORS</a>
+            <a class="list-group-item list-group-item-action" href="#narrative">NARRATIVE</a>
+        </div>
+    </div>
+    <div class="col-10">
+        <div data-spy="scroll" id="scroll" data-target="#forms" data-offset="0" class="scrollspy-example">
+            <div class="header-bar">
+                <h3 id="clinicalImpression">Clinical Impression</h3>
+            </div>
+            <div class="form">
+                <form action="">
+                    <div class="form-group">
+                        <small>Primary Impression</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                    <div class="form-group">
+                        <small>Secondary Impression</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                    <div class="form-group">
+                        <small>Medical/Trauma</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                </form>
+            </div>
+            <div class="header-bar">
+                <h3 id="supportingSignsSymptons">Supporting Signs/Symptoms</h3>
+            </div>
+            <div class="align">
+                <button class="btn btn-success btn-sm">Add Sign/Symptom</button>
+            </div>
+            <div class="header-bar">
+                <h3 id="personnel">Patient Complaint</h3>
+            </div>
+            <div class="form">
+                <form action="">
+                    <div class="form-group">
+                        <small>Chief Complaint</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                    <div class="form-group">
+                        <small>Secondary Complaint</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                    <div class="form-group">
+                        <small>Final Patient Acuity</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                </form>
+            </div>
+            <div class="header-bar">
+                <h3 id="disposition">Injuries</h3>
+            </div>
+            <div class="form">
+                <form action="">
+                    <div class="form-group">
+                        <small>Was the Patient Injured?</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                    <div class="form-group">
+                        <small>Primary Injury</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                    <div class="form-group">
+                        <small>Injury Details</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                    <div class="form-group">
+                        <small>Place of Injury</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                    <div class="form-group">
+                        <small>Date of Injury</small>
+                        <input type="date" class="form-control-plaintext">
+                    </div>
+                </form>
+            </div>
+            <div class="header-bar">
+                <h3 id="destination">Factors</h3>
+            </div>
+            <div class="form">
+                <form action="">
+                    <div class="form-group">
+                        <small>Barriers to Care</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                    <div class="form-group">
+                        <small>Alcohol/Drugs</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                    <div class="form-group">
+                        <small>Pregnancy?</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                </form>
+            </div>
+            <div class="header-bar">
+                <h3 id="times">Narrative</h3>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-success btn-sm">Add Narrative</button>
+            </div>
+        </div>
+    </div>
+</div>
+
