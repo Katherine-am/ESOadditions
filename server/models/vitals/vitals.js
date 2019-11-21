@@ -8,23 +8,26 @@ const VitalsSchema = new mongoose.Schema({
     side: { type: String },
     position: { type: String },
     uto: { type: String },
-    bloodPressure: [
-        { systolic: { type: Number } },
-        { diastolic: { type: Number } },
-        { meanArterialPressure: { type: Number } },
-        { method: { type: String } }
-    ],
-    pulse: [
-        { rate: { type: Number } },
-        { method: { type: String } },
-        { rhythm: { type: String } },
-        { strength: { type: String } }
-    ],
-    respiration: [
-        { rate: { type: Number } },
-        { quality: { type: String } },
-        { rhythm: { type: String } }
-    ],
+    // bloodPressure: 
+    bpsystolic: { type: Number },
+    bpdiastolic: { type: Number },
+    bpmeanArterialPressure: { type: Number },
+    bpmethod: { type: String }
+    // End of bloodPressure 
+    ,
+    // pulse: 
+    prate: { type: Number },
+    pmethod: { type: String },
+    prhythm: { type: String },
+    pstrength: { type: String }
+    // End of pulse
+    ,
+    // respiration
+    rrate: { type: Number },
+    rquality: { type: String },
+    rrhythm: { type: String }
+    //End of respiration
+    ,
     capnography: [
         { PCOsaturation: { type: Number } },
         { ventilation: { type: Number } },

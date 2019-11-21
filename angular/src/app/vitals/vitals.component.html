@@ -1,28 +1,212 @@
 <p>vitals works!</p>
+<script type="text/javascript">
+    // Toggles the passed button from OFF to ON and vice-versa.
+    function toggle(button) {
+        switch (button.value) {
+            case "ONN":
+                button.value = "OFF";
+                break;
+            case "OFF":
+                button.value = "ONN";
+                break;
+        }
+    }
+</script>
+
+
 {{id}}
 {{editpatient}}
-<button (click)="showEditForm(editpatient.id)">Edit</button>
+<div *ngIf="addvitals">
+
+    <button (click)="showEditForm(editpatient.id)">Add Vitals</button>
+    <button>Monitor Import</button>
+</div>
 <div class="row">
+
     <div class="col">
         <div *ngIf="openform">
-            <form>
-                <label for="">PTA:
-                    <input type="text" name="pta" [(ngModel)]="editpatient.pta" required minlength="2" maxlength="24"
-                        #pta="ngModel" />
-                </label>
-                <label for="">time
-                    <input type="date" name="time" [(ngModel)]="editpatient.time" #time="ngModel" />
-                </label>
-                <label for="">AVPU
-                    <input type="text" name="avpu" [(ngModel)]="editpatient.avpu" #avpu="ngModel" />
-                </label>
-                <label for="">side
-                    <input type="text" name="side" [(ngModel)]="editpatient.side" #side="ngModel" />
-                </label>
-                <label for="">position
-                    <input type="text" name="position" [(ngModel)]="editpatient.position" #position="ngModel" />
-                </label>
 
+            <form>
+                <div class="row">
+                    <label for="">PTA:
+                        <input type="text" name="pta" [(ngModel)]="editpatient.pta" required minlength="2"
+                            maxlength="24" #pta="ngModel" />
+                    </label>
+                    <label for="">time
+                        <input type="date" name="time" [(ngModel)]="editpatient.time" #time="ngModel" />
+
+                    </label>
+                    <label for="">AVPU
+                        <select name="avpu" [(ngModel)]="editpatient.avpu" #avpu="ngModel">
+                            <option value="Alert">Alert</option>
+                            <option value="Voice">Voice</option>
+                            <option value="Pain">Pain</option>
+                            <option value="Unresponsive">Unresponsive</option>
+                        </select>
+
+                    </label>
+                    <label for="">side
+                        <select name="side" [(ngModel)]="editpatient.side" #side="ngModel">
+                            <option value="Left">Left</option>
+                            <option value="Right">Right</option>
+                        </select>
+                    </label>
+                    <label for="">position
+                        <select name="position" [(ngModel)]="editpatient.position" #position="ngModel">
+                            <option value="standing">standing</option>
+                            <option value="sitting">sitting</option>
+                            <option value="supine">supine</option>
+                        </select>
+                    </label>
+                </div>
+                <h1>------------------------</h1>
+                <!-- Blood presure Form -->
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <button (click)="formstoggle(openform)">Blood Pressure</button>
+                            <button (click)="pulstoggle(openform)">Pulse</button>
+                        </div>
+                        <div class="row">
+                            <button (click)="resptoggle(openform)">Respiration</button>
+                            <button>SPO2/ETCO2/CO</button>
+                        </div>
+                        <div class="row">
+                            <button>TEMP/GLUCOSE</button>
+                            <button>SCORING</button>
+                        </div>
+                        <div class="row">
+                            <button>ECG</button>
+                            <button>PAIN SCALES</button>
+                        </div>
+                    </div>
+
+                    <div *ngIf="bloodpresure" class="col">
+                        <h1>Blood Presure</h1>
+                        <label for="">Systrlic
+                            <input type="number" name="bpsystolic" [(ngModel)]="editpatient.bpsystolic" required
+                                minlength="2" maxlength="24" #bpsystolic="ngModel" value="keys" />
+                        </label>
+                        <label for="">Diastolic
+                            <input type="number" name="bpdiastolic" [(ngModel)]="editpatient.bpdiastolic" required
+                                minlength="2" maxlength="24" #bpdiastolic="ngModel" />
+                        </label>
+                        <label for="">MeanArterialPressure
+                            <input type="number" name="bpmeanArterialPressure"
+                                [(ngModel)]="editpatient.bpmeanArterialPressure" required minlength="2" maxlength="24"
+                                #bpmeanArterialPressure="ngModel" />
+                        </label>
+                        <label for="">Method
+                            <select name="bpmethod" [(ngModel)]="editpatient.bpmethod" #bpmethod="ngModel">
+                                <option value="">Clear Selection</option>
+                                <option value="Arterial Line">Arterial Line</option>
+                                <option value="Doppler">Doppler</option>
+                                <option value="Cuff - Automated">Cuff - Automated</option>
+                                <option value="Cuff - Manual Auscultated">Cuff - Manual Auscultated</option>
+                                <option value="Cuff - Manual Palpated Only">Cuff - Manual Palpated Only</option>
+                                <option value="Venous Line">Venous Line</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- --------------------- -->
+                    <div *ngIf="pulsform" class="col">
+                        <h1>Puls</h1>
+                        <label for="">Rate
+                            <input type="number" name="prate" [(ngModel)]="editpatient.prate" required minlength="2"
+                                maxlength="24" #prate="ngModel" />
+                        </label>
+                        <label for="">Method
+                            <select name="pmethod" [(ngModel)]="editpatient.pmethod" #pmethod="ngModel">
+
+                                <option value="Ausculated">Ausculated</option>
+                                <option value="Doppler">Doppler</option>
+                                <option value="Electronic Monitor - Caradiac">Electronic Monitor - Caradiac</option>
+                                <option value="Electronic Monitor - Pulse Oximeter">Electronic Monitor - Pulse Oximeter
+                                </option>
+                                <option value="Electronic Monitor - (Other)">Electronic Monitor - (Other)</option>
+                                <option value="Palpated">Palpated</option>
+                            </select>
+                        </label>
+
+                        <label for="">Rhythm
+                            <input type="radio" name="prhythm" [(ngModel)]="editpatient.prhythm" #prhythm="ngModel"
+                                value="Regular"> Regular
+
+                            <select name="prhythm" [(ngModel)]="editpatient.prhythm" #prhythm="ngModel">
+                                <option value="">Clear Selection</option>
+                                <option value="Regular">Regular</option>
+                                <option value="Regularly Irregular">Regularly Irregular</option>
+                                <option value="Irregularly Irregular">Irregularly Irregular</option>
+                            </select>
+
+                        </label>
+                        <br>
+                        <label for="">Strength
+                            <input type="radio" name="pstrength" [(ngModel)]="editpatient.pstrength"
+                                #pstrength="ngModel" value="Strong"> Strong
+                            <input type="radio" name="pstrength" [(ngModel)]="editpatient.pstrength"
+                                #pstrength="ngModel" value="Weak"> Weak<br>
+                            <select name="pstrength" [(ngModel)]="editpatient.pstrength" #pstrength="ngModel">
+
+                                <option value="">Other</option>
+                                <option value="Strong">Strong</option>
+                                <option value="Weak">Weak</option>
+                                <option value="Bounding">Bounding</option>
+                                <option value="Thready">Thready</option>
+                                <option value="Absent">Absent</option>
+
+                            </select>
+                        </label>
+
+                    </div>
+                    <!-- --------------------- -->
+                    <!-- --------------------- -->
+                    <div *ngIf="respform" class="col">
+                        <h1>Respiration</h1>
+                        <label for="">Rate
+                            <input type="number" name="rrate" [(ngModel)]="editpatient.rrate" required minlength="2"
+                                maxlength="24" #rrate="ngModel" />
+                        </label>
+                        <label for="">Quality
+                            <input type="radio" name="rquality" [(ngModel)]="editpatient.rquality" #rquality="ngModel"
+                                value="Normal"> Normal <input type="radio" name="rquality"
+                                [(ngModel)]="editpatient.rquality" #rquality="ngModel" value="Labored"> Labored
+
+                            <select name="rquality" [(ngModel)]="editpatient.rquality" #rquality="ngModel">
+
+                                <option value="Apneic">Apneic</option>
+                                <option value="Labored">Labored</option>
+                                <option value="Mecanically Assisted (BVM, CPAP, etc">Mecanically Assisted (BVM, CPAP,
+                                    etc</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Rapid">Rapid</option>
+                                <option value="Shallow">Shallow</option>
+                                <option value="Ventilated">Ventilated</option>
+                                <option value="Weak/Agonal">Weak/Agonal</option>
+                            </select>
+                        </label>
+
+                        <label for="">Rhythm
+                            <input type="radio" name="rrhythm" [(ngModel)]="editpatient.rrhythm" #rrhythm="ngModel"
+                                value="Regular"> Regular <input type="radio" name="rrhythm"
+                                [(ngModel)]="editpatient.rrhythm" #rrhythm="ngModel" value="Irregular"> Irregular
+
+                            <select name="rrhythm" [(ngModel)]="editpatient.rrhythm" #rrhythm="ngModel">
+                                <option value="">Clear Selection</option>
+                                <option value="Regular">Regular</option>
+                                <option value="Irregular">Irregular</option>
+                                <option value="Ventilated">Ventilated</option>
+                                <option value="Assisted">Assisted</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- --------------------- -->
+                </div>
+
+
+                <!-- rrate: { type: Number },
+        rquality: { type: String },
+        rrhythm: { type: String } -->
 
                 <input (click)="onEdit()" type="submit" value="Edit Patient" />
             </form>
@@ -37,18 +221,43 @@
 
         <!-- *ngFor="let rest of allrest; let i = index" -->
         <div *ngFor="let i of info.vitals;">
-            <h1>{{i.pta}}</h1>
-            <h1>{{i.time}}</h1>
-            <h1>{{i.avpu}}</h1>
-            <h1>{{i.side}}</h1>
-            <h1>{{i.position}}</h1>
-            <h1>-------------------</h1>
+            <ul>
+
+                <p *ngIf="i.pta != null">pta: {{i.pta}}</p>
+                <p>time: {{i.time}}</p>
+                <p *ngIf="i.avpu != null">avpu: {{i.avpu}}</p>
+                <p *ngIf="i.side != null">side: {{i.side}}</p>
+                <p *ngIf="i.position != null">position: {{i.position}}</p>
+
+                <h3
+                    *ngIf="i.bpsystolic != null || i.bpdiastolic != null || i.bpmeanArterialPressure != null || i.bpmethod != null">
+                    Blood Pressure</h3>
+                <p *ngIf="i.bpsystolic != null">systolic: {{i.bpsystolic}}</p>
+                <p *ngIf="i.bpdiastolic != null">diastolic: {{i.bpdiastolic}}</p>
+                <p *ngIf="i.bpmeanArterialPressure != null">meanArterialPressure: {{i.bpmeanArterialPressure}}</p>
+                <p *ngIf="i.bpmethod != null">method: {{i.bpmethod}}</p>
+
+                <h3 *ngIf="i.prate != null || i.pmethod != null || i.prhythm != null || i.pstrength != null">
+                    Pulse</h3>
+                <p *ngIf="i.prate != null">Rate: {{i.prate}}</p>
+                <p *ngIf="i.pmethod != null">Method: {{i.pmethod}}</p>
+                <p *ngIf="i.prhythm != null">Rhythm: {{i.prhythm}}</p>
+                <p *ngIf="i.pstrength != null">Strength: {{i.pstrength}}</p>
+
+                <h3 *ngIf="i.rrate != null || i.rquality != null || i.rrhythm != null">
+                    Respiration</h3>
+                <p *ngIf="i.rrate != null">Rate: {{i.rrate}}</p>
+                <p *ngIf="i.rquality != null">Quality: {{i.rquality}}</p>
+                <p *ngIf="i.rrhythm != null">Rhythm: {{i.rrhythm}}</p>
+
+                <p>-------------------</p>
+
+            </ul>
 
         </div>
-        <!-- {{info.vitals['0'].pta}}
-        {{info.vitals['0'].time}}
-        {{info.vitals['0'].avpu}}
-        {{info.vitals['0'].side}}
-        {{info.vitals['0'].position}} -->
+        <!-- rrate: { type: Number },
+        rquality: { type: String },
+        rrhythm: { type: String } -->
+
     </div>
 </div>
