@@ -7,6 +7,10 @@ import { HttpService } from './_services/http.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  show: boolean = false;
   title = 'angular';
   constructor(private _httpService: HttpService){}
+  getId(eventData){
+    console.log("Getting ID from home", eventData)
+  }
 }

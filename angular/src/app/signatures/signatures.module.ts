@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignaturesRoutingModule } from './signatures-routing.module';
 import { SignaturesComponent } from './signatures.component';
 
@@ -9,7 +9,8 @@ import { SignaturesComponent } from './signatures.component';
   declarations: [SignaturesComponent],
   imports: [
     CommonModule,
-    SignaturesRoutingModule
+    SignaturesRoutingModule,
+    FormsModule
   ]
 })
 export class SignaturesModule { }
