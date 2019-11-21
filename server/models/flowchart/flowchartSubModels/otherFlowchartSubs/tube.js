@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/ESOadditions', { useNewUrlParser: true });
 
-const TubeSchema = {
+const TubeSchema = new mongoose.Schema({
     time: {type: Date},
     date: {type: Date},
     size: {type: Number},
@@ -13,10 +13,11 @@ const TubeSchema = {
     complications: {type: String},
     comment: {type: String},
     successful: {type: Boolean},
-}
+})
 
 const Tube = new mongoose.Schema('tubes', TubeSchema);
 
 module.exports = {
-    Tube
+    Tube: Tube,
+    TubeSchema: TubeSchema
 }
