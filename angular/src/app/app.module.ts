@@ -4,7 +4,7 @@ import { HttpService } from './_services/http.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from './forms/forms.module';
+import { FormsModule } from '@angular/forms';
 import { HomeModule } from './home/home.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
