@@ -29,4 +29,5 @@
         </li>
     </ul>
 </nav>
+<app-home *ngIf="show" (giveId)="getId()"></app-home>
 <router-outlet></router-outlet>
