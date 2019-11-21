@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <div class="row">
     <div class="col-2">
         <div id="forms" class="list-group">
@@ -12,48 +13,47 @@
         </div>
     </div>
     <div class="col-10">
-        {{id}}
         <div data-spy="scroll" id="scroll" data-target="#forms" data-offset="0" class="scrollspy-example">
             <div class="header-bar">
                 <h3 id="response">Response</h3>
             </div>
             <div class="form">
-                <form action="">
+                <form (submit)="addIncident()">
                     <div class="form-group">
                         <small>Incident number</small>
-                        <input type="text" class="form-control-plaintext">
+                        <input type="text" [(ngModel)]="newIncident.incidentNumber" name="incidentNumber" class="form-control-plaintext" required #incidentNumber="ngModel">
                     </div>
                     <div class="form-group">
                         <small>Run Number</small>
-                        <input type="text" class="form-control-plaintext">
+                        <input type="number" [(ngModel)]="newIncident.runNumber" name="runNumber" class="form-control-plaintext" required #runNumber="ngModel">
                     </div>
                     <div class="form-group">
                         <small>Run Type</small>
-                        <input type="text" class="form-control-plaintext">
+                        <input type="text" [(ngModel)]="newIncident.runType" name="runType" class="form-control-plaintext" required #runType="ngModel">
                     </div>
                     <div class="form-group">
                         <small>Priority</small>
-                        <input type="text" class="form-control-plaintext">
+                        <input type="text" [(ngModel)]="newIncident.priority" name="priority" class="form-control-plaintext" required #priority="ngModel">
                     </div>
                     <div class="form-group">
                         <small>Shift</small>
-                        <input type="text" class="form-control-plaintext">
+                        <input type="text" [(ngModel)]="newIncident.shift" name="shift" class="form-control-plaintext" required #shift="ngModel">
                     </div>
                     <div class="form-group">
                         <small>Unit</small>
-                        <input type="text" class="form-control-plaintext">
+                        <input type="text" [(ngModel)]="newIncident.unit" name="unit" class="form-control-plaintext" required #unit="ngModel">
                     </div>
                     <div class="form-group">
                         <small>Vehicle</small>
-                        <input type="text" class="form-control-plaintext">
+                        <input type="text" [(ngModel)]="newIncident.vehicle" name="vehicle" class="form-control-plaintext" required #vehicle="ngModel">
                     </div>
                     <div class="form-grou">
                         <small>EMD Card Number</small>
-                        <input type="text" class="form-control-plaintext">
+                        <input type="text" [(ngModel)]="newIncident.EMDcardNumber" name="EMDcardNumber" class="form-control-plaintext" required #EMDcardNumber="ngModel">
                     </div>
                     <div class="form-group">
                         <small>Requested By</small>
-                        <input type="text" class="form-control-plaintext">
+                        <input type="text" [(ngModel)]="newIncident.requestedBy" name="requestedBy" class="form-control-plaintext" required #requestedBy="ngModel">
                     </div>
                     <div class="text-center">
                         <input type="submit" class="btn btn-sm btn-primary" value="Next">

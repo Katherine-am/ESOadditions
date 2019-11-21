@@ -30,6 +30,7 @@
         </li>
     </ul>
 </nav>
-    <app-home *ngIf="show" [new]="new" (giveId)="getId($event)"></app-home>
    
+<app-home *ngIf="show" (giveId)="getId($event)"></app-home>
+<!-- <app-home *ngIf="show" [new]="new" (giveId)="getId($event)"></app-home> -->
 <router-outlet></router-outlet>

@@ -1,17 +1,16 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { HttpService } from '../http.service';
 import { Router, ActivatedRoute } from '@angular/router';
-
-
+// import { EventEmitter } from 'events';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  @Input() new: any;
-  constructor(private _httpService: HttpService, private route: Router, private router: ActivatedRoute) { }
-  @Output() giveId = new EventEmitter();
+  new: any;
+  constructor(private _httpService: HttpService, private router: Router, private route: ActivatedRoute) { }
+  @Output() giveId: EventEmitter<any> = new EventEmitter();
   ngOnInit() {
     this.new = {id: ''};
   }
@@ -22,7 +21,7 @@ export class HomeComponent implements OnInit {
       this.new = data.result;
       console.log(this.new)
       this.giveId.emit(this.new._id);
-      this.route.navigate(['/incident-home/'+this.new._id]);
+      this.router.navigate(['/incident-home/'+this.new._id]);
     })
   }
 }

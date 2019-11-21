@@ -19,4 +19,7 @@ export class HttpService {
   editpatient(editpatient) {
     return this._http.put(`/api/${editpatient._id}`, editpatient);
   }
+  addIncident(id, newIncident){
+    return this._http.put(`/api/incident/${id}`, newIncident)
+  }
 }
