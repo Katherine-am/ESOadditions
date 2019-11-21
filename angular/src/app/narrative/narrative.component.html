@@ -15,7 +15,7 @@
             <div class="header-bar">
                 <h3 id="clinicalImpression">Clinical Impression</h3>
             </div>
-            <div class="form">
+            <div class="form mainForm">
                 <form action="">
                     <div class="form-group">
                         <small>Primary Impression</small>
@@ -40,7 +40,7 @@
             <div class="header-bar">
                 <h3 id="personnel">Patient Complaint</h3>
             </div>
-            <div class="form">
+            <div class="form mainForm">
                 <form action="">
                     <div class="form-group">
                         <small>Chief Complaint</small>
@@ -59,7 +59,7 @@
             <div class="header-bar">
                 <h3 id="disposition">Injuries</h3>
             </div>
-            <div class="form">
+            <div class="form mainForm">
                 <form action="">
                     <div class="form-group">
                         <small>Was the Patient Injured?</small>
@@ -86,7 +86,7 @@
             <div class="header-bar">
                 <h3 id="destination">Factors</h3>
             </div>
-            <div class="form">
+            <div class="form mainForm">
                 <form action="">
                     <div class="form-group">
                         <small>Barriers to Care</small>
@@ -106,8 +106,31 @@
                 <h3 id="times">Narrative</h3>
             </div>
             <div class="text-center">
-                <button class="btn btn-success btn-sm">Add Narrative</button>
+                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#narrativeModal">Add Narrative</button>
             </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade col-4 offset-8" id="narrativeModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="form col-12">
+                    <div class="modal-title">
+                        <div class="form-group row modalTitle">
+                            <p>Narrative</p>
+                            <button type="button" class="btn btn-success offset-8" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group row modalBody">
+                            <textarea class="form-control" placeholder="Start typing..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>    
         </div>
     </div>
 </div>

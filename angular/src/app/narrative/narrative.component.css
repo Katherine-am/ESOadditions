@@ -25,7 +25,7 @@ h3 {
     font-weight: 200;
 }
 
-.form {
+.mainForm {
     padding-left: 10vw;
     width: 70%
 }
@@ -43,15 +43,11 @@ small {
     right: 0;
     top: 0;
     width: 100%;
-    height: 85vh;
+    height: 90vh;
 }
 
 .form-control-plaintext {
     border-bottom: 1px solid lightgray;
-}
-
-.form-group {
-    margin: 2vw 0;
 }
 
 .col-2 {
@@ -60,4 +56,14 @@ small {
     background-color: #ecf0f1;
     height: 100vh;
     border-right: 1px solid lightgray;
+}
+
+.modalTitle {
+    margin: 10px 0px;
+}
+
+textarea {
+    border: none;
+    padding-left: 0px;
+    padding-top: -10px;
 }
