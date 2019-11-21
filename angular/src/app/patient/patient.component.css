@@ -49,3 +49,9 @@ small {
 .form-group {
     margin: 2vw 0;
 }
+
+.form-control {
+    border: none;
+    border-radius: none;
+    border-bottom: 1px solid lightgray;
+}

@@ -22,4 +22,7 @@ export class HttpService {
   addIncident(id, newIncident){
     return this._http.put(`/api/incident/${id}`, newIncident)
   }
+  addDemographics(id, newDemo){
+    return this._http.put(`/api/demographics/${id}`, newDemo)
+  }
 }

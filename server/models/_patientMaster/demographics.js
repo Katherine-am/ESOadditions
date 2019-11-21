@@ -6,9 +6,9 @@ const DemographicsSchema = new mongoose.Schema({
     middleName: { type: String },
     lastName: { type: String },
     SSN: { type: Number, min: 0, max: 9 },
-    DOB: { type: Date },
+    DOB: { type: String },
     age: { type: Number, min: 0, max: 130 },
-    weight: { type: Number },
+    weight: { type: String },
     gender: { type: String },
     race: { type: String },
     ethnicity: { type: String }

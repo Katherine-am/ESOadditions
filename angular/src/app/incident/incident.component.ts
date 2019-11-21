@@ -52,6 +52,17 @@ export class IncidentComponent implements OnInit {
     observable.subscribe((data: any) => {
       if(data.message === 'success'){
         console.log("We added an incident", data.result)
+        this.newIncident = {
+          incidentNumber: "",
+          runNumber: 0,
+          runType: "",
+          priority: "",
+          shift: "",
+          unit: "",
+          vehicle: "",
+          EMDcardNumber: "",
+          requestedBy: ""
+        }
         let pat = this.getCurrentPatient(this.id)
         console.log(pat)
         this._router.navigate(['/patient-home/'+this.id])
