@@ -7,11 +7,14 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
+  new: any;
   show: boolean = false;
-  title = 'angular';
-  constructor(private _httpService: HttpService) { }
-  getId(eventData) {
-    console.log("Getting ID from home", eventData)
+  title = 'ESO';
+  constructor(private _httpService: HttpService, private route: Router) { }
+
+  getId(event) {
+    console.log("Getting ID from home", event)
   }
 }
