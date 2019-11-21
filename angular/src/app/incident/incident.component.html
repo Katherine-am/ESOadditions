@@ -1,4 +1,39 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<nav class="navbar navbar-expand-lg">
+    <ul class="navbar-nav nav-fill w-100">
+        <li class="nav-item">
+            <label [routerLink]="['/incident-home/:id']">INCIDENT</label>
+        </li>
+        <li class="nav-item">
+            <label [routerLink]="['/patient-home/:id']">PATIENT</label>
+        </li>
+        <li class="nav-item">
+            <label routerLink="/vitals-home/{{id}}">VITALS</label>
+            <button routerLink="/vitals-home/{{id}}">VITALS</button>
+        </li>
+        <li class="nav-item">
+            <label [routerLink]="['/flowchart-home/:id']">FLOWCHART</label>
+        </li>
+        <li class="nav-item">
+            <label [routerLink]="['/assessments-home/:id']">ASSESSMENT</label>
+        </li>
+        <li class="nav-item">
+            <label [routerLink]="['/narrative-home/:id']">NARRATIVE</label>
+        </li>
+        <li class="nav-item">
+            <label [routerLink]="['/forms-home/:id']">FORMS</label>
+        </li>
+        <li class="nav-item">
+            <label [routerLink]="['/billing-home/:id']">BILLING</label>
+        </li>
+        <li class="nav-item">
+            <label [routerLink]="['/signatures-home/:id']">SIGNATURES</label>
+        </li>
+
+    </ul>
+</nav>
+
+
 <div class="row">
     <div class="col-2">
         <div id="forms" class="list-group">
@@ -13,6 +48,7 @@
         </div>
     </div>
     <div class="col-10">
+        {{id}}
         <div data-spy="scroll" id="scroll" data-target="#forms" data-offset="0" class="scrollspy-example">
             <div class="header-bar">
                 <h3 id="response">Response</h3>
@@ -91,4 +127,3 @@
         </div>
     </div>
 </div>
-

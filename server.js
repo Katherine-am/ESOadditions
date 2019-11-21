@@ -13,6 +13,8 @@ const incidentRoute = require('./server/routes/incidentRoutes')(app);
 const narrativeRoute = require('./server/routes/narrativeRoutes')(app);
 const patientRoute = require('./server/routes/patientRoutes')(app);
 const vitalsRoute = require('./server/routes/vitalsRoutes')(app);
+
+
 app.all('*', (req, res, next) => {
     res.sendFile(path.resolve("./angular/dist/angular/index.html"))
 })

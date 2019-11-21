@@ -27,6 +27,8 @@
         <li class="nav-item">
             <label [routerLink]="['/signatures-home/:id']">SIGNATURES</label>
         </li>
+        {{id}}
     </ul>
 </nav>
+<div [routerLink]="['/vitals-home/:id']"></div>
 <router-outlet></router-outlet>

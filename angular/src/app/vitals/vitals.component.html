@@ -1,1 +1,54 @@
 <p>vitals works!</p>
+{{id}}
+{{editpatient}}
+<button (click)="showEditForm(editpatient.id)">Edit</button>
+<div class="row">
+    <div class="col">
+        <div *ngIf="openform">
+            <form>
+                <label for="">PTA:
+                    <input type="text" name="pta" [(ngModel)]="editpatient.pta" required minlength="2" maxlength="24"
+                        #pta="ngModel" />
+                </label>
+                <label for="">time
+                    <input type="date" name="time" [(ngModel)]="editpatient.time" #time="ngModel" />
+                </label>
+                <label for="">AVPU
+                    <input type="text" name="avpu" [(ngModel)]="editpatient.avpu" #avpu="ngModel" />
+                </label>
+                <label for="">side
+                    <input type="text" name="side" [(ngModel)]="editpatient.side" #side="ngModel" />
+                </label>
+                <label for="">position
+                    <input type="text" name="position" [(ngModel)]="editpatient.position" #position="ngModel" />
+                </label>
+
+
+                <input (click)="onEdit()" type="submit" value="Edit Patient" />
+            </form>
+
+            <div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+
+        {{editpatient.name}}
+
+        <!-- *ngFor="let rest of allrest; let i = index" -->
+        <div *ngFor="let i of info.vitals;">
+            <h1>{{i.pta}}</h1>
+            <h1>{{i.time}}</h1>
+            <h1>{{i.avpu}}</h1>
+            <h1>{{i.side}}</h1>
+            <h1>{{i.position}}</h1>
+            <h1>-------------------</h1>
+
+        </div>
+        <!-- {{info.vitals['0'].pta}}
+        {{info.vitals['0'].time}}
+        {{info.vitals['0'].avpu}}
+        {{info.vitals['0'].side}}
+        {{info.vitals['0'].position}} -->
+    </div>
+</div>

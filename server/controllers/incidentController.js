@@ -1,1 +1,2 @@
 const incident = require('./incidentController')
+
