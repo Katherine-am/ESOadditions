@@ -27,8 +27,7 @@
         <li class="nav-item">
             <label [routerLink]="['/signatures-home/:id']">SIGNATURES</label>
         </li>
-        {{id}}
     </ul>
 </nav>
-<app-home *ngIf="show" (giveId)="getId()"></app-home>
+<app-home *ngIf="show" (giveId)="getId($event)"></app-home>
 <router-outlet></router-outlet>

@@ -1,7 +1,7 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { HttpService } from '../http.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { EventEmitter } from 'events';
+// import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ import { EventEmitter } from 'events';
 export class HomeComponent implements OnInit {
   new: any;
   constructor(private _httpService: HttpService, private router: Router, private route: ActivatedRoute) { }
-  @Output() giveId = new EventEmitter();
+  @Output() giveId: EventEmitter<any> = new EventEmitter();
   ngOnInit() {
     this.new = {id: ''};
   }
