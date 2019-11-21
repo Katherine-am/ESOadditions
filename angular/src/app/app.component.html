@@ -30,5 +30,5 @@
         {{id}}
     </ul>
 </nav>
-<div [routerLink]="['/vitals-home/:id']"></div>
+<app-home *ngIf="show" (giveId)="getId()"></app-home>
 <router-outlet></router-outlet>

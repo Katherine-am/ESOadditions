@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AssessmentsRoutingModule } from './assessments-routing.module';
 import { AssessmentsComponent } from './assessments.component';
 
@@ -9,7 +9,8 @@ import { AssessmentsComponent } from './assessments.component';
   declarations: [AssessmentsComponent],
   imports: [
     CommonModule,
-    AssessmentsRoutingModule
+    AssessmentsRoutingModule,
+    FormsModule
   ]
 })
 export class AssessmentsModule { }
