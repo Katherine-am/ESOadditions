@@ -19,6 +19,8 @@
 
     <button (click)="showEditForm(editpatient.id)">Add Vitals</button>
     <button>Monitor Import</button>
+    <button class="bt btn-sm btn-primary" [routerLink]="['/flowchart-home/'+id]">Next</button>
+    <button class="btn btn-sm btn-danger" [routerLink]="['/patient-home/'+id]"></button>
 </div>
 
 <!-- --------------------------- -->

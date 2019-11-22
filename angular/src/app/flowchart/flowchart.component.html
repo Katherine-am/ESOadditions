@@ -17,7 +17,9 @@
 
 
 <div *ngIf="addvitals">
+    <button class="btn btn-sm btn-primary" [routerLink]="['/narrative-home/'+id]">Next</button>
     <button (click)="showEditFormFlow(editpatient.id)">Airway</button>
+    <button class="btn btn-sm btn-danger" [routerLink]="['/vitals-home/'+id]">Go Back</button>
 </div>
 
 <div class="row">
@@ -178,8 +180,7 @@
 
         <!-- *ngFor="let rest of allrest; let i = index" -->
         <div *ngFor="let i of info.flowchart;">
-            <h3
-                *ngIf="i.OPAprior != null || i.OPAsuccessful != null || i.OPAcomments != null || i.OPAGeneralprovider != null || i.OPAGeneralresponse != null || i.OPAGeneralcomplication != null">
+            <h3 *ngIf="i.OPAprior != null || i.OPAsuccessful != null || i.OPAcomments != null || i.OPAGeneralprovider != null || i.OPAGeneralresponse != null || i.OPAGeneralcomplication != null">
                 AIRWAY OPA</h3>
             <p *ngIf="i.OPAprior != null">Prior: {{i.OPAprior}}</p>
 
@@ -190,8 +191,7 @@
             <p *ngIf="i.OPAGeneralcomplication != null">Complication: {{i.OPAGeneralcomplication}}</p>
 
             <p>-------------------</p>
-            <h3
-                *ngIf="i.oroprior != null || i.orosize != null || i.oroplacedAt != null || i.orosuccessful != null || i.orocomments != null || i.oroprovider != null || i.ororesponse != null || i.orocomplication != null">
+            <h3 *ngIf="i.oroprior != null || i.orosize != null || i.oroplacedAt != null || i.orosuccessful != null || i.orocomments != null || i.oroprovider != null || i.ororesponse != null || i.orocomplication != null">
                 Orogastric Tube</h3>
             <p *ngIf="i.oroprior != null">Prior: {{i.oroprior}}</p>
             <p *ngIf="i.orosize != null">Size: {{i.orosize}}</p>
@@ -214,8 +214,7 @@
                 <p *ngIf="i.side != null">side: {{i.side}}</p>
                 <p *ngIf="i.position != null">position: {{i.position}}</p>
 
-                <h3
-                    *ngIf="i.bpsystolic != null || i.bpdiastolic != null || i.bpmeanArterialPressure != null || i.bpmethod != null">
+                <h3 *ngIf="i.bpsystolic != null || i.bpdiastolic != null || i.bpmeanArterialPressure != null || i.bpmethod != null">
                     Blood Pressure</h3>
                 <p *ngIf="i.bpsystolic != null">systolic: {{i.bpsystolic}}</p>
                 <p *ngIf="i.bpdiastolic != null">diastolic: {{i.bpdiastolic}}</p>
@@ -248,8 +247,8 @@
 
 
 
-<!-- 
- 
+<!--
+
     OPAprior: { type: String },
     OPAsize: { type: Number },
     OPAPlaceAt: { type: Number },
