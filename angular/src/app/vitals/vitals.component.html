@@ -14,28 +14,32 @@
 </script>
 
 
-{{id}}
-{{editpatient}}
+<!-- {{id}}
+{{editpatient}} -->
 <footer class="footer">
-    <div class="footerButtonGroup" *ngIf="addvitals">
-        <button class="btn btn-success footerButton" (click)="showEditForm(editpatient.id)">Add Vitals</button>
-        <button class="btn btn-success footerButton">Monitor Import</button>
+    <div *ngIf="addvitals">
+        <div class="footerButtonGroup">
+            <button class="btn btn-success footerButton" (click)="showEditForm(editpatient.id)" data-toggle="modal" data-target="#vitalsModal">Add Vitals</button>
+            <button class="btn btn-success footerButton">Monitor Import</button>
+        </div>
     </div>
 </footer>
-<div class="row">
 
-    <div class="col">
+<!-- HERE IS MUSTAFA'S WORK -->
+<!-- <div class="row"> -->
+<!-- <div class="container"> -->
+    <div class="col-8 offset-2 shadow">
         <div *ngIf="openform">
 
             <form>
-                <div class="row">
+
+                <div class="row headerBar">
                     <label for="">PTA:
                         <input type="text" name="pta" [(ngModel)]="editpatient.pta" required minlength="2"
                             maxlength="24" #pta="ngModel" />
                     </label>
                     <label for="">time
                         <input type="date" name="time" [(ngModel)]="editpatient.time" #time="ngModel" />
-
                     </label>
                     <label for="">AVPU
                         <select name="avpu" [(ngModel)]="editpatient.avpu" #avpu="ngModel">
@@ -59,45 +63,100 @@
                             <option value="supine">supine</option>
                         </select>
                     </label>
+                    <div>
+                        <button class="btn btn-success btn-sm">OK</button>
+                    </div>
                 </div>
-                <h1>------------------------</h1>
+
                 <!-- Blood presure Form -->
                 <div class="row">
-                    <div class="col">
-                        <div class="row">
-                            <button (click)="formstoggle(openform)">Blood Pressure</button>
-                            <button (click)="pulstoggle(openform)">Pulse</button>
-                        </div>
-                        <div class="row">
-                            <button (click)="resptoggle(openform)">Respiration</button>
-                            <button>SPO2/ETCO2/CO</button>
-                        </div>
-                        <div class="row">
-                            <button>TEMP/GLUCOSE</button>
-                            <button>SCORING</button>
-                        </div>
-                        <div class="row">
-                            <button>ECG</button>
-                            <button>PAIN SCALES</button>
-                        </div>
+                    <div class="col-3 vitalsPanel">
+                        <table class="col-12">
+                            <tr class="panelHeight">
+                                <td>
+                                    <button class="btn btn-light vitalsFlipPanel col-12" (click)="formstoggle(openform)">BLOOD PRESSURE</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-light vitalsFlipPanel col-12" (click)="pulstoggle(openform)">PULSE</button>
+                                </td>
+                            </tr>
+                            <tr class="panelHeight">
+                                <td>
+                                    <button class="btn btn-light vitalsFlipPanel col-12" (click)="resptoggle(openform)">RESPIRATION</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-light vitalsFlipPanel col-12">SPO2/ETCO2/CO</button>
+                                </td>
+                            </tr>
+                            <tr class="panelHeight">
+                                <td>
+                                    <button class="btn btn-light vitalsFlipPanel col-12">TEMP/GLUCOSE</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-light vitalsFlipPanel col-12" >SCORING</button>
+                                </td>
+                            </tr>
+                            <tr class="panelHeight">
+                                <td>
+                                    <button class="btn btn-light vitalsFlipPanel col-12" >ECG</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-light vitalsFlipPanel col-12" >PAIN SCALES</button>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
 
-                    <div *ngIf="bloodpresure" class="col">
-                        <h1>Blood Presure</h1>
-                        <label for="">Systrlic
+                    <div *ngIf="bloodpresure" class="col-9">
+
+                            <h3>Blood Pressure</h3>
+                            <div class="form mainForm">
+                                    <form action="">
+                                        <div class="form-group">
+                                            <small>Systolic</small>
+                                            <input type="number" class="form-control-plaintext" name="bpsystolic" [(ngModel)]="editpatient.bpsystolic" required
+                                                minlength="2" maxlength="24" #bpsystolic="ngModel" value="keys" />
+                                        </div>
+                                        <div class="form-group">
+                                            <small>Diastolic</small>
+                                            <input type="number" class="form-control-plaintext" name="bpdiastolic" [(ngModel)]="editpatient.bpdiastolic" required
+                                                minlength="2" maxlength="24" #bpdiastolic="ngModel" />
+                                        </div>
+                                        <div class="form-group">
+                                            <small>MeanArterialPressure</small>
+                                            <input type="number" class="form-control-plaintext" name="bpmeanArterialPressure"
+                                                [(ngModel)]="editpatient.bpmeanArterialPressure" required minlength="2" maxlength="24"
+                                                #bpmeanArterialPressure="ngModel" />
+                                        </div>
+                                        <div class="">
+                                            <small>Method</small><br>
+                                            <select name="bpmethod" [(ngModel)]="editpatient.bpmethod" #bpmethod="ngModel">
+                                                <option value="">Clear Selection</option>
+                                                <option value="Arterial Line">Arterial Line</option>
+                                                <option value="Doppler">Doppler</option>
+                                                <option value="Cuff - Automated">Cuff - Automated</option>
+                                                <option value="Cuff - Manual Auscultated">Cuff - Manual Auscultated</option>
+                                                <option value="Cuff - Manual Palpated Only">Cuff - Manual Palpated Only</option>
+                                                <option value="Venous Line">Venous Line</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+
+                        <!-- <label for="">Systrlic
                             <input type="number" name="bpsystolic" [(ngModel)]="editpatient.bpsystolic" required
                                 minlength="2" maxlength="24" #bpsystolic="ngModel" value="keys" />
-                        </label>
-                        <label for="">Diastolic
+                        </label> -->
+                        <!-- <label for="">Diastolic
                             <input type="number" name="bpdiastolic" [(ngModel)]="editpatient.bpdiastolic" required
                                 minlength="2" maxlength="24" #bpdiastolic="ngModel" />
-                        </label>
-                        <label for="">MeanArterialPressure
+                        </label> -->
+                        <!-- <label for="">MeanArterialPressure
                             <input type="number" name="bpmeanArterialPressure"
                                 [(ngModel)]="editpatient.bpmeanArterialPressure" required minlength="2" maxlength="24"
                                 #bpmeanArterialPressure="ngModel" />
-                        </label>
-                        <label for="">Method
+                        </label> -->
+                        <!-- <label for="">Method
                             <select name="bpmethod" [(ngModel)]="editpatient.bpmethod" #bpmethod="ngModel">
                                 <option value="">Clear Selection</option>
                                 <option value="Arterial Line">Arterial Line</option>
@@ -107,7 +166,7 @@
                                 <option value="Cuff - Manual Palpated Only">Cuff - Manual Palpated Only</option>
                                 <option value="Venous Line">Venous Line</option>
                             </select>
-                        </label>
+                        </label> -->
                     </div>
                     <!-- --------------------- -->
                     <div *ngIf="pulsform" class="col">
@@ -261,4 +320,8 @@
         rrhythm: { type: String } -->
 
     </div>
-</div>
+<!-- </div> -->
+<!-- </div> -->
+
+
+               
