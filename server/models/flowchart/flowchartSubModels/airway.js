@@ -10,7 +10,7 @@ const AirwaySchema = new mongoose.Schema({
         { date: { type: Date } },
         { successful: { type: Boolean } },
         { comments: { type: String } },
-        { general: [GeneralSchema] }
+        // { general: [GeneralSchema] }
     ],
     orogastricTube: [
         { time: { type: Date } },
@@ -19,7 +19,7 @@ const AirwaySchema = new mongoose.Schema({
         { placedAt: { type: Number } },
         { successful: { type: Boolean } },
         { comments: { type: String } },
-        { general: [GeneralSchema] }
+        // { general: [GeneralSchema] }
     ],
     iGEL: [
         { time: { type: Date } },
@@ -33,14 +33,14 @@ const AirwaySchema = new mongoose.Schema({
         { complications: { type: String } },
         { comment: { type: String } },
         { successful: { type: Boolean } },
-        { general: [GeneralSchema] }
+        // { general: [GeneralSchema] }
     ],
     flutterValve: [
         { time: { type: Date } },
         { date: { type: Date } },
         { comment: { type: String } },
         { successful: { type: Boolean } },
-        { general: [GeneralSchema] }
+        // { general: [GeneralSchema] }
     ],
     surgicalCricothyroidotomy: [
         { time: { type: Date } },
@@ -50,17 +50,17 @@ const AirwaySchema = new mongoose.Schema({
         { placementVerification: { type: String } },
         { complications: { type: String } },
         { comment: { type: String } },
-        { general: [GeneralSchema] }
+        // { general: [GeneralSchema] }
     ],
     orotrachealIntubation: [
         { tube: [TubeSchema] },
-        { general: [GeneralSchema] }
+        // { general: [GeneralSchema] }
     ],
     magillForcep: [
         { time: { type: Date } },
         { date: { type: Date } },
         { comments: { type: String } },
-        { general: [GeneralSchema] }
+        // { general: [GeneralSchema] }
     ],
     oxygen: [
         { time: { type: Date } },
@@ -68,13 +68,13 @@ const AirwaySchema = new mongoose.Schema({
         { device: { type: String } },
         { flowRate: { type: Number } },
         { comments: { type: String } },
-        { general: [GeneralSchema] }
+        // { general: [GeneralSchema] }
     ],
     needleCricothyroidotomy: [
         { time: { type: Date } },
         { date: { type: Date } },
         { comments: { type: String } },
-        { general: [GeneralSchema] }
+        // { general: [GeneralSchema] }
     ],
     suction: [
         { time: { type: Date } },
@@ -82,7 +82,7 @@ const AirwaySchema = new mongoose.Schema({
         { content: { type: String } },
         { amount: { type: Number } },
         { comments: { type: String } },
-        { general: [GeneralSchema] }
+        // { general: [GeneralSchema] }
     ]
 })
 

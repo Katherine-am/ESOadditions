@@ -15,6 +15,32 @@ const CriticalCareSchema = CriticalCareModel.CriticalCareSchema;
 
 const FlowchartSchema = new mongoose.Schema({
     airway: [AirwaySchema],
+    // OPA: [
+    OPAprior: { type: String },
+    OPAsuccessful: { type: String },
+    OPAcomments: { type: String },
+    // general: [GeneralSchema]
+    OPAGeneralprovider: { type: String },
+    OPAGeneralresponse: { type: String },
+    OPAGeneralcomplication: { type: String },
+    OPAGeneralmedicalcontrol: { type: String },
+    OPAGeneralphysicianRef: { type: String },
+    // end of OPA
+
+    orogastricTube: [
+        { time: { type: Date } },
+        { date: { type: Date } },
+        { size: { type: Number } },
+        { placedAt: { type: Number } },
+        { successful: { type: Boolean } },
+        { comments: { type: String } },
+        // { general: [GeneralSchema] }
+    ],
+
+
+
+
+
     criticalCare: [CriticalCareSchema],
     // defibCardio: [DefibCardioSchema],
     // IVtherapy: [IVtherapySchema],

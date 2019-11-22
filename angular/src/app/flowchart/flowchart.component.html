@@ -1,4 +1,8 @@
-<!-- <div class="container">
+<br>
+<br>
+<br>
+<br>
+<div class="container">
     <div class="col-4 offset-4">
         <table class="table table-light">
             <tbody>
@@ -9,16 +13,226 @@
             </tbody>
         </table>
     </div>
+<<<<<<< HEAD
+    <div *ngIf="openform">hhhh</div>
+</div>
+
+{{id}}
+{{editpatient}}
+<br>
+<br>
+<br>
+<br>
+<div *ngIf="addvitals">
+
+    <button (click)="showEditFormFlow(editpatient.id)">Airway</button>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+
+    <div class="col">
+        <div *ngIf="openform">
+
+            <form>
+
+                <h1>----------- OPA -------------</h1>
+                <!-- Blood presure Form -->
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <button (click)="formstoggle(openform)">OPA</button>
+                            <button (click)="pulstoggle(openform)">Orogastric</button>
+                        </div>
+                        <div class="row">
+                            <button (click)="resptoggle(openform)">IGEL</button>
+                            <button>Flatter Value</button>
+                        </div>
+
+                    </div>
+
+
+                    <!--
+                    // general: [GeneralSchema]
+                    OPAGeneralprovider
+                    OPAGeneralresponse: { type: String },
+                    OPAGeneralcomplication: { type: String },
+                    OPAGeneralmedicalcontrol: { type: String },
+                    OPAGeneralphysicianRef: { type: String }, -->
+                    <div *ngIf="bloodpresure" class="col">
+                        <h1>OPA</h1>
+                        <label for="">Prior to Arrivall
+                            <select name="OPAprior" [(ngModel)]="editpatient.OPAprior" #OPAprior="ngModel">
+                                <option value="Yes">Yes</option>
+                                <option value="NO">No</option>
+                            </select>
+                        </label>
+
+                        <label for="">Successful
+                            <select name="OPAsuccessful" [(ngModel)]="editpatient.OPAsuccessful"
+                                #OPAsuccessful="ngModel">
+                                <option value="Yes">Yes</option>
+                                <option value="NO">No</option>
+                            </select>
+                        </label>
+                        <label for="">Comments
+                            <input type="text" name="OPAcomments" [(ngModel)]="editpatient.OPAcomments" required
+                                minlength="2" maxlength="24" #OPAcomments="ngModel" />
+                        </label>
+                        <h1>General</h1>
+                        <label for="">Provider
+                            <input type="text" name="OPAGeneralprovider" [(ngModel)]="editpatient.OPAGeneralprovider"
+                                required minlength="2" maxlength="24" #OPAGeneralprovider="ngModel" />
+                        </label>
+
+                        <label for="">Patient Response
+
+
+                            <input type="radio" name="OPAGeneralresponse" [(ngModel)]="editpatient.OPAGeneralresponse"
+                                #OPAGeneralresponse="ngModel" value="Unchanged"> Unchanged<br>
+                            <input type="radio" name="OPAGeneralresponse" [(ngModel)]="editpatient.OPAGeneralresponse"
+                                #OPAGeneralresponse="ngModel" value="Improved"> Improved<br>
+                            <input type="radio" name="OPAGeneralresponse" [(ngModel)]="editpatient.OPAGeneralresponse"
+                                #OPAGeneralresponse="ngModel" value="Worse"> Worse
+
+                        </label>
+                        <label for="">Complication
+                            <select name="OPAGeneralcomplication" [(ngModel)]="editpatient.OPAGeneralcomplication"
+                                #OPAGeneralcomplication="ngModel">
+                                <option value="None">None</option>
+                                <option value="Apnea">Apnea</option>
+                                <option value="Bleeding">Bleeding</option>
+                                <option value="Other">Other Because its a Long Listtttttttt.....</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- --------------------- -->
+                    <div *ngIf="pulsform" class="col">
+                        <h1>Orogastric</h1>
+
+                    </div>
+                    <!-- --------------------- -->
+                    <!-- --------------------- -->
+                    <div *ngIf="respform" class="col">
+                        <h1>iGEL</h1>
+
+                    </div>
+                    <!-- --------------------- -->
+                </div>
+
+
+                <!-- rrate: { type: Number },
+                rquality: { type: String },
+                rrhythm: { type: String } -->
+
+                <input (click)="onEditFlow()" type="submit" value="Add" />
+            </form>
+
+            <div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+
+        {{editpatient.name}}
+
+        <!-- *ngFor="let rest of allrest; let i = index" -->
+        <div *ngFor="let i of info.flowchart;">
+            <h3 *ngIf="i.OPAprior != null || i.OPAsuccessful != null || i.OPAcomments != null ">
+                AIRWAY OPA</h3>
+            <p *ngIf="i.OPAprior != null">Prior: {{i.OPAprior}}</p>
+
+            <p *ngIf="i.OPAsuccessful != null">successful: {{i.OPAsuccessful}}</p>
+            <p *ngIf="i.OPAcomments != null">Comments: {{i.OPAcomments}}</p>
+            <p *ngIf="i.OPAGeneralprovider != null">Provider: {{i.OPAGeneralprovider}}</p>
+            <p *ngIf="i.OPAGeneralresponse != null">Patient Response: {{i.OPAGeneralresponse}}</p>
+            <p *ngIf="i.OPAGeneralcomplication != null">Complication: {{i.OPAGeneralcomplication}}</p>
+
+            <p>-------------------</p>
+        </div>
+        <!-- 
+      <--  OPAprior: { type: String },
+        OPAsize: { type: Number },
+        OPAPlaceAt: { type: Number },
+        OPAsuccessful: { type: Boolean },ddd
+        OPAcomments: { type: String },
+        // general: [GeneralSchema]
+        OPAGeneralresponse: { type: String },
+        OPAGeneralcomplication: { type: String },
+        OPAGeneralmedicalcontrol: { type: String },
+        OPAGeneralphysicianRef: { type: String }, -->
+
+        <div *ngFor="let i of info.vitals;">
+            <ul>
+
+                <p *ngIf="i.pta != null">pta: {{i.pta}}</p>
+
+                <p *ngIf="i.avpu != null">avpu: {{i.avpu}}</p>
+                <p *ngIf="i.side != null">side: {{i.side}}</p>
+                <p *ngIf="i.position != null">position: {{i.position}}</p>
+
+                <h3
+                    *ngIf="i.bpsystolic != null || i.bpdiastolic != null || i.bpmeanArterialPressure != null || i.bpmethod != null">
+                    Blood Pressure</h3>
+                <p *ngIf="i.bpsystolic != null">systolic: {{i.bpsystolic}}</p>
+                <p *ngIf="i.bpdiastolic != null">diastolic: {{i.bpdiastolic}}</p>
+                <p *ngIf="i.bpmeanArterialPressure != null">meanArterialPressure: {{i.bpmeanArterialPressure}}</p>
+                <p *ngIf="i.bpmethod != null">method: {{i.bpmethod}}</p>
+
+                <h3 *ngIf="i.prate != null || i.pmethod != null || i.prhythm != null || i.pstrength != null">
+                    Pulse</h3>
+                <p *ngIf="i.prate != null">Rate: {{i.prate}}</p>
+                <p *ngIf="i.pmethod != null">Method: {{i.pmethod}}</p>
+                <p *ngIf="i.prhythm != null">Rhythm: {{i.prhythm}}</p>
+                <p *ngIf="i.pstrength != null">Strength: {{i.pstrength}}</p>
+
+                <h3 *ngIf="i.rrate != null || i.rquality != null || i.rrhythm != null">
+                    Respiration</h3>
+                <p *ngIf="i.rrate != null">Rate: {{i.rrate}}</p>
+                <p *ngIf="i.rquality != null">Quality: {{i.rquality}}</p>
+                <p *ngIf="i.rrhythm != null">Rhythm: {{i.rrhythm}}</p>
+
+                <p>-------------------</p>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+<!-- 
+ 
+    OPAprior: { type: String },
+    OPAsize: { type: Number },
+    OPAPlaceAt: { type: Number },
+    OPAsuccessful: { type: Boolean },
+    OPAcomments: { type: String },
+    // general: [GeneralSchema]
+    OPAGeneralresponse: { type: String },
+    OPAGeneralcomplication: { type: String },
+    OPAGeneralmedicalcontrol: { type: String },
+    OPAGeneralphysicianRef: { type: String }, -->
+<!-- -------------------------- -->
+<footer>
+=======
 </div> -->
 <footer class="footer">
+>>>>>>> ec32a08e6fe4f74701627842606332f1513d5c77
     <div class="container text-center">
         <div class="btn-group" role="group">
-            <button click="showTreatments('')" class="btn btn-success">Airway</button>
-            <button click="showTreatments('')" class="btn btn-success">Critical Care</button>
-            <button click="showTreatments('')" class="btn btn-success">Defib/Cardio</button>
-            <button click="showTreatments('')" class="btn btn-success">IV Therapy</button>
-            <button click="showTreatments('')" class="btn btn-success">Medication</button>
-            <button click="showTreatments('')" class="btn btn-success">Other</button>
+            <!-- <button click="showTreatments('')" class="btn btn-success">Airway</button>
+                <button click="showTreatments('')" class="btn btn-success">Critical Care</button>
+                <button click="showTreatments('')" class="btn btn-success">Defib/Cardio</button>
+                <button click="showTreatments('')" class="btn btn-success">IV Therapy</button>
+                <button click="showTreatments('')" class="btn btn-success">Medication</button>
+                <button click="showTreatments('')" class="btn btn-success">Other</button> -->
         </div>
     </div>
 </footer>

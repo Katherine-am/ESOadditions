@@ -19,7 +19,17 @@ export class HttpService {
   editpatient(editpatient) {
     return this._http.put(`/api/${editpatient._id}`, editpatient);
   }
-  addIncident(id, newIncident){
+
+  getOneflow(id) {
+    console.log(id)
+    return this._http.get(`/api/${id}/flow`);
+  }
+
+  editpatientflow(editpatient) {
+    return this._http.put(`/api/${editpatient._id}/flow`, editpatient);
+  }
+
+  addIncident(id, newIncident) {
     return this._http.put(`/api/incident/${id}`, newIncident)
   }
   addDemographics(id, newDemo){

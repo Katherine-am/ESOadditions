@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlowchartRoutingModule } from './flowchart-routing.module';
 import { FlowchartComponent } from './flowchart.component';
 
-
 @NgModule({
   declarations: [FlowchartComponent],
   imports: [
@@ -14,3 +13,4 @@ import { FlowchartComponent } from './flowchart.component';
   ]
 })
 export class FlowchartModule { }
+
