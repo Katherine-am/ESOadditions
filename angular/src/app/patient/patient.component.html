@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-group">
                         <small>Weight</small>
-                        <input type="text" class="form-control-plaintext" placeholder="000lbs">
+                        <input type="text" [(ngModel)]="newDemographic.weight" name="weight" class="form-control-plaintext" placeholder="000lbs" required #weight="ngModel">
                     </div>
                     <div class="form-group">
                         <small>Gender</small>
@@ -80,8 +80,8 @@
                         <input type="text" [(ngModel)]="newDemographic.ethnicity" name="ethnicity" class="form-control-plaintext" required #ethnicity="ngModel">
                     </div>
                     <div class="text-center">
-                        <input type="submit" class="btn btn-sm btn-primary" value="Next">
                         <button [routerLink]="['/incident-home/'+id]" class="btn btn-sm btn-danger">Go Back</button>
+                        <input type="submit" class="btn btn-sm btn-primary" value="Next">
                     </div>
                 </form>
             </div>
@@ -89,31 +89,106 @@
                 <h3 id="contact">Contact</h3>
             </div>
             <div class="form mainForm">
-                <p>TO BE CONTINUED</p>
+                <form action="">
+                    <div class="form-group">
+                        <small>Address</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                    <div class="form-group">
+                        <small>Apt/Suite/Room</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <small>City</small>
+                            <input type="text" class="form-control-plaintext">
+                        </div>
+                        <div class="col-6">
+                            <small>State</small>
+                            <input type="text" class="form-control-plaintext">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <small>Zip</small>
+                            <input type="number" class="form-control-plaintext">
+                        </div>
+                        <div class="col-6">
+                            <small>Country</small>
+                            <input type="text" class="form-control-plaintext">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <small>Phone Number</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <small>Driver's License</small>
+                            <input type="text" class="form-control-plaintext">
+                        </div>
+                        <div class="col-6">
+                            <small>State</small>
+                            <input type="text" class="form-control-plaintext">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <small>Resident Status</small>
+                        <input type="text" class="form-control-plaintext">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <small>Physician Last Name</small>
+                            <input type="text" class="form-control-plaintext">
+                        </div>
+                        <div class="col-6">
+                            <small>Physician First Name</small>
+                            <input type="text" class="form-control-plaintext">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <small>Advance Directive</small>
+                        <select name="" class="form-control">
+                          <option value="" disabled selected>Select...</option>
+                          <option value="livingWill">Living Will</option>
+                          <option value="emsDNR">State/EMS DNR Form</option>
+                          <option value="none">None</option>
+                          <option value="other">Other</option>
+                        </select>
+                    </div>
+                </form>
             </div>
             <div class="header-bar">
                 <h3 id="history">History</h3>
             </div>
             <div class="form mainForm">
-                <p>TO BE CONTINUED</p>
+                <div class="text-center">
+                    <button class="btn btn-sm btn-success">Add History</button>
+                </div>
             </div>
             <div class="header-bar">
                 <h3 id="allergies">Allergies</h3>
             </div>
             <div class="form mainForm">
-                <p>TO BE CONTINUED</p>
+                <div class="text-center">
+                    <button class="btn btn-sm btn-success">Add Allergies</button>
+                </div>
             </div>
             <div class="header-bar">
                 <h3 id="medications">Medications</h3>
             </div>
             <div class="form mainForm">
-                <p>TO BE CONTINUED</p>
+                <div class="text-center">
+                    <button class="btn btn-sm btn-success">Add Medications</button>
+                </div>
             </div>
             <div class="header-bar">
                 <h3 id="belongings">Belongings</h3>
             </div>
             <div class="form mainForm">
-                <p>TO BE CONTINUED</p>
+                <div class="text-center">
+                    <button class="btn btn-sm btn-success">Add Belongings</button>
+                </div>
             </div>
         </div>
     </div>

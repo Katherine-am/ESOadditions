@@ -13,7 +13,7 @@
     }
 </script>
 
-
+<!-- --------------------------- -->
 <!-- {{id}}
 {{editpatient}} -->
 
@@ -116,8 +116,10 @@ WILL IMPLEMENT LATER -->
 <footer class="footer">
     <div *ngIf="addvitals">
         <div class="footerButtonGroup">
+            <button class="btn btn-sm btn-danger footerButtonDirection" [routerLink]="['/patient-home/'+id]">◀  Back</button>
             <button class="btn btn-success footerButton" (click)="showEditForm(editpatient.id)" data-toggle="modal" data-target="#vitalsModal">Add Vitals</button>
             <button class="btn btn-success footerButton">Monitor Import</button>
+            <button class="btn btn-sm btn-primary footerButtonDirection" [routerLink]="['/flowchart-home/'+id]">Next  ▶</button>
         </div>
     </div>
 </footer>
@@ -159,7 +161,8 @@ WILL IMPLEMENT LATER -->
                     </select>
                 </label>
                 <div>
-                    <button class="btn btn-success btn-sm">OK</button>
+                    <!-- <button class="btn btn-success btn-sm">OK</button> -->
+                    <input class="btn btn-success" (click)="onEdit()" id="submit" type="submit" value="Submit" />
                 </div>
             </div>
 
@@ -461,7 +464,7 @@ WILL IMPLEMENT LATER -->
     rquality: { type: String },
     rrhythm: { type: String } -->
 
-                <input class="btn btn-success" (click)="onEdit()" type="submit" value="Edit Patient" />
+                <!-- <input class="btn btn-success" (click)="onEdit()" type="submit" value="Edit Patient" /> -->
             </form>
         </div>
     </div>
@@ -517,5 +520,3 @@ WILL IMPLEMENT LATER -->
 </div>
 
 
-
-               

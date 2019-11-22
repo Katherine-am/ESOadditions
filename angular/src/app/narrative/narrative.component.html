@@ -128,13 +128,13 @@
                     <div class="col-6">
                         <div class="card" id="flex">
                             <div class="card-body" id="scrollable">
-                                <h4>INCIDENT</h4>
+                                <h3>INCIDENT</h3>
                                 <ul class="list-group list-group-flush">
                                     <li>Incident Number: {{incident.incidentNumber}}</li>
                                     <li>Run Type: {{incident.runType}}</li>
                                     <li>Priority: {{incident.priority}}</li>
                                 </ul>
-                                <h4>DEMOGRAPHICS</h4>
+                                <h3>DEMOGRAPHICS</h3>
                                 <ul class="list-group list-group-flush">
                                     <li>Full Name: {{demographics.firstName}} {{demographics.middleName}} {{demographics.lastName}}</li>
                                     <li>SSN: {{demographics.SSN}}</li>
@@ -144,7 +144,20 @@
                                     <li>Gender: {{demographics.gender}}</li>
                                     <li>Race: {{demographics.race}}</li>
                                 </ul>
-                                <h4>VITALS</h4>
+                                <h3>Vitals</h3>
+                                <ul>
+                                    <li>PTA: {{vitals.pta}}</li>
+                                    <li>Time: {{vitals.time}}</li>
+                                    <li>AVPU {{vitals.avpu}}</li>
+                                    <li>Side: {{vitals.side}}</li>
+                                    <li>Position {{vitals.position}}</li>
+                                    <p>Blood Pressure</p>
+                                    <li>Systrlic: {{vitals.bpsystrlic}}</li>
+                                    <li>Diastolic: {{vitals.bpdiastolic}}</li>
+                                    <li>Mean Arterial Pressue: {{vitals.bpmeanAterialPressue}}</li>
+                                    <li>Method: {{vitals.bpmethod}}</li>
+                                </ul>
+                                <h3>Flowchart</h3>
                                 <ul>
                                     <li></li>
                                 </ul>
@@ -167,3 +180,5 @@
         </div>
     </div>
 </div>
+
+<!-- current id: 5dd74245e4814a5f0046b3bd -->

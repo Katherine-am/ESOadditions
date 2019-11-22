@@ -17,8 +17,12 @@ export class NarrativeComponent implements OnInit {
   newSubNarrative: any;
   demographics: any;
   incident: any;
+  vitals: any;
+  flowchart: any;
 
   ngOnInit() {
+    this.vitals = []
+    this.flowchart = []
     this.demographics = []
     this.incident = []
     this.newSubNarrative = {narrative: ""}
@@ -38,6 +42,7 @@ export class NarrativeComponent implements OnInit {
       console.log("Narrative", this.onepatient.narrative)
       this.demographics = this.onepatient.demographics[0]
       this.incident = this.onepatient.incident[0]
+      this.vitals = this.onepatient.vitals[0]
     });
   }
   subjectiveNarrative(){
