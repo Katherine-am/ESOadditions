@@ -11,9 +11,9 @@ const routes: Routes = [
   { path: 'flowchart-home/:id', loadChildren: () => import('./flowchart/flowchart.module').then(m => m.FlowchartModule) },
   { path: 'assessments-home/:id', loadChildren: () => import('./assessments/assessments.module').then(m => m.AssessmentsModule) },
   { path: 'narrative-home/:id', loadChildren: () => import('./narrative/narrative.module').then(m => m.NarrativeModule) },
-  { path: 'forms-home', loadChildren: () => import('./forms/forms.module').then(m => m.FormsModule) },
-  { path: 'billing-home', loadChildren: () => import('./billing/billing.module').then(m => m.BillingModule) },
-  { path: 'signatures-home', loadChildren: () => import('./signatures/signatures.module').then(m => m.SignaturesModule)},
+  { path: 'forms-home/:id', loadChildren: () => import('./forms/forms.module').then(m => m.FormsModule) },
+  { path: 'billing-home/:id', loadChildren: () => import('./billing/billing.module').then(m => m.BillingModule) },
+  { path: 'signatures-home/:id', loadChildren: () => import('./signatures/signatures.module').then(m => m.SignaturesModule)},
   { path: '', pathMatch: 'full', redirectTo: '/home-home' }
 ];
 

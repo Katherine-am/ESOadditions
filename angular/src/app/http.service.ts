@@ -35,4 +35,7 @@ export class HttpService {
   addDemographics(id, newDemo){
     return this._http.put(`/api/demographics/${id}`, newDemo)
   }
+  addSubjectiveNarrative(id, newNar){
+    return this._http.put(`/api/narrative/${id}/subjective`, newNar)
+  }
 }

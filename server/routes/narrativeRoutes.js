@@ -1,6 +1,6 @@
-const controller = require('../controllers/narrativeController')
-const path = require('path')
+ const controller = require('../controllers/narrativeController')
+ const path = require('path')
 
-module.exports = app => {
-
-}
+ module.exports = app => {
+     app.put('/api/narrative/:id/subjective', controller.newSubjectiveNarrative);
+ }
