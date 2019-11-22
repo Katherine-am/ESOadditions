@@ -9,10 +9,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   new: any;
+
   constructor(private _httpService: HttpService, private router: Router, private route: ActivatedRoute) { }
-  @Output() giveId: EventEmitter<any> = new EventEmitter();
+  @Output() sendBool: EventEmitter<any> = new EventEmitter();
   ngOnInit() {
     this.new = {id: ''};
+    // this.show()
   }
   start(){
     let observable = this._httpService.newMaster(this.new)
@@ -20,8 +22,11 @@ export class HomeComponent implements OnInit {
       console.log("We made something", data.result)
       this.new = data.result;
       console.log(this.new)
-      this.giveId.emit(this.new._id);
+      // this.giveId.emit(this.new._id);
       this.router.navigate(['/incident-home/'+this.new._id]);
     })
   }
+  // show(){
+  //   this.sendBool.emit(true)
+  // }
 }

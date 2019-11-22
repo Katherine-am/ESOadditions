@@ -8,3 +8,7 @@ nav {
     margin-bottom: -2%;
     box-shadow: 1px 1px 3px gray;
 }
+
+h1 {
+    margin: 5vw 0;
+}

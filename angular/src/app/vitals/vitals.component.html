@@ -14,9 +14,7 @@
 </script>
 
 
-{{id}}
-{{editpatient}}
-<<<<<<< HEAD
+{{id}} {{editpatient}}
 <div *ngIf="addvitals">
 
     <button (click)="showEditForm(editpatient.id)">Add Vitals</button>
@@ -24,14 +22,12 @@
 </div>
 
 <!-- --------------------------- -->
-=======
 <footer class="footer">
     <div class="footerButtonGroup" *ngIf="addvitals">
         <button class="btn btn-success footerButton" (click)="showEditForm(editpatient.id)">Add Vitals</button>
         <button class="btn btn-success footerButton">Monitor Import</button>
     </div>
 </footer>
->>>>>>> ec32a08e6fe4f74701627842606332f1513d5c77
 <div class="row">
 
     <div class="col">
@@ -121,7 +117,7 @@
                     </div>
                     <!-- --------------------- -->
                     <div *ngIf="pulsform" class="col">
-                        <h1>Puls</h1>
+                        <h1>Pulse</h1>
                         <label for="">Rate
                             <input type="number" name="prate" [(ngModel)]="editpatient.prate" required minlength="2"
                                 maxlength="24" #prate="ngModel" />
@@ -240,8 +236,7 @@
                 <p *ngIf="i.side != null">side: {{i.side}}</p>
                 <p *ngIf="i.position != null">position: {{i.position}}</p>
 
-                <h3
-                    *ngIf="i.bpsystolic != null || i.bpdiastolic != null || i.bpmeanArterialPressure != null || i.bpmethod != null">
+                <h3 *ngIf="i.bpsystolic != null || i.bpdiastolic != null || i.bpmeanArterialPressure != null || i.bpmethod != null">
                     Blood Pressure</h3>
                 <p *ngIf="i.bpsystolic != null">systolic: {{i.bpsystolic}}</p>
                 <p *ngIf="i.bpdiastolic != null">diastolic: {{i.bpdiastolic}}</p>
