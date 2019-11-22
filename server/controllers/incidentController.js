@@ -1,5 +1,3 @@
-const incident = require('./incidentController')
-
 const MongIncident = require('../models/incident/incident');
 const Incident = MongIncident.Incident;
 const MongPatient = require('../models/_patientMaster/patientMasterModel');

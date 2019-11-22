@@ -16,6 +16,7 @@
 
 {{id}}
 {{editpatient}}
+<<<<<<< HEAD
 <div *ngIf="addvitals">
 
     <button (click)="showEditForm(editpatient.id)">Add Vitals</button>
@@ -23,6 +24,14 @@
 </div>
 
 <!-- --------------------------- -->
+=======
+<footer class="footer">
+    <div class="footerButtonGroup" *ngIf="addvitals">
+        <button class="btn btn-success footerButton" (click)="showEditForm(editpatient.id)">Add Vitals</button>
+        <button class="btn btn-success footerButton">Monitor Import</button>
+    </div>
+</footer>
+>>>>>>> ec32a08e6fe4f74701627842606332f1513d5c77
 <div class="row">
 
     <div class="col">

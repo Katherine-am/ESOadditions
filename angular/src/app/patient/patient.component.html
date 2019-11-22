@@ -15,33 +15,106 @@
             <div class="header-bar">
                 <h3 id="demographics">Demographics</h3>
             </div>
-            <div class="form">
-                <form action="">
+            <div class="form mainForm">
+                <form (submit)="addDemographics()">
                     <div class="form-group row">
-                        <small></small>
+                        <div class="col-6">
+                            <small>First Name</small>
+                            <input type="text" [(ngModel)]="newDemographic.firstName" name="firstName" class="form-control-plaintext" required #firstName="ngModel">
+                        </div>
+                        <div class="col-6">
+                            <small>Middle Name</small>
+                            <input type="text" [(ngModel)]="newDemographic.middleName" name="middleName" class="form-control-plaintext" required #middleName="ngModel">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-6">
+                            <small>Last Name</small>
+                            <input type="text" [(ngModel)]="newDemographic.lastName" name="lastName" class="form-control-plaintext" required #lastName="ngModel">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-6">
+                            <small>Social Security Number</small>
+                            <input type="number" [(ngModel)]="newDemographic.SSN" name="SSN" class="form-control-plaintext" pattern="\d{3}-?\d{2}-?\d{4}" placeholder="123-45-6789" required #SSN="ngModel">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-6">
+                            <small>Date of Birth</small>
+                            <input type="date" [(ngModel)]="newDemographic.DOB" name="DOB" class="form-control-plaintext" required #DOB="ngModel">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <small>Age</small>
+                        <input type="text" [(ngModel)]="newDemographic.age" name="age" class="form-control-plaintext" required #age="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <small>Weight</small>
+                        <input type="text" class="form-control-plaintext" placeholder="000lbs">
+                    </div>
+                    <div class="form-group">
+                        <small>Gender</small>
+                        <select [(ngModel)]="newDemographic.gender" name="gender" class="form-control" required #gender="ngModel">
+                          <option value="" selected disabled>Select ...</option>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="unidentified">Unidentified</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <small>Race</small>
+                        <select [(ngModel)]="newDemographic.race" name="race" class="form-control" required #race="ngModel">
+                          <option value="" selected disabled>Select ...</option>
+                          <option value="white">White</option>
+                          <option value="black">Black</option>
+                          <option value="native">American Indian or Alaskan Native</option>
+                          <option value="asian">Asian</option>
+                          <option value="hispanicLatino">Hispanic or Latino</option>
+                          <option value="pacificIslander">Native Hawaiian or Other Pacific Islander</option>
+                          <option value="unknown">Unknown</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <small>Ethnicity</small>
+                        <input type="text" [(ngModel)]="newDemographic.ethnicity" name="ethnicity" class="form-control-plaintext" required #ethnicity="ngModel">
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-sm btn-primary" value="Next">
+                        <button [routerLink]="['/incident-home/'+id]" class="btn btn-sm btn-danger">Go Back</button>
                     </div>
                 </form>
             </div>
             <div class="header-bar">
                 <h3 id="contact">Contact</h3>
             </div>
-            <p>TO BE CONTINUED</p>
+            <div class="form mainForm">
+                <p>TO BE CONTINUED</p>
+            </div>
             <div class="header-bar">
                 <h3 id="history">History</h3>
             </div>
-            <p>TO BE CONTINUED</p>
+            <div class="form mainForm">
+                <p>TO BE CONTINUED</p>
+            </div>
             <div class="header-bar">
                 <h3 id="allergies">Allergies</h3>
             </div>
-            <p>TO BE CONTINUED</p>
+            <div class="form mainForm">
+                <p>TO BE CONTINUED</p>
+            </div>
             <div class="header-bar">
                 <h3 id="medications">Medications</h3>
             </div>
-            <p>TO BE CONTINUED</p>
+            <div class="form mainForm">
+                <p>TO BE CONTINUED</p>
+            </div>
             <div class="header-bar">
                 <h3 id="belongings">Belongings</h3>
             </div>
-            <p>TO BE CONTINUED</p>
+            <div class="form mainForm">
+                <p>TO BE CONTINUED</p>
+            </div>
         </div>
     </div>
 </div>

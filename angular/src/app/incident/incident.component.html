@@ -17,7 +17,7 @@
             <div class="header-bar">
                 <h3 id="response">Response</h3>
             </div>
-            <div class="form">
+            <div class="form mainForm">
                 <form (submit)="addIncident()">
                     <div class="form-group">
                         <small>Incident number</small>
@@ -57,37 +57,52 @@
                     </div>
                     <div class="text-center">
                         <input type="submit" class="btn btn-sm btn-primary" value="Next">
+                        <button [routerLink]="['/home-home']" class="btn btn-sm btn-danger">Restart</button>
                     </div>
                 </form>
             </div>
             <div class="header-bar">
                 <h3 id="scene">Scene</h3>
             </div>
-            <p>TO BE CONTINUED</p>
+            <div class="form mainForm">
+                <p>TO BE CONTINUED</p>
+            </div>
             <div class="header-bar">
                 <h3 id="personnel">Personnel</h3>
             </div>
-            <p>TO BE CONTINUED</p>
+            <div class="form mainForm">
+                <p>TO BE CONTINUED</p>
+            </div>
             <div class="header-bar">
                 <h3 id="disposition">Disposition</h3>
             </div>
-            <p>TO BE CONTINUED</p>
+            <div class="form mainForm">
+                <p>TO BE CONTINUED</p>
+            </div>
             <div class="header-bar">
                 <h3 id="destination">Destination</h3>
             </div>
-            <p>TO BE CONTINUED</p>
+            <div class="form mainForm">
+                <p>TO BE CONTINUED</p>
+            </div>
             <div class="header-bar">
                 <h3 id="times">Times</h3>
             </div>
-            <p>TO BE CONTINUED</p>
+            <div class="form mainForm">
+                <p>TO BE CONTINUED</p>
+            </div>
             <div class="header-bar">
                 <h3 id="mileage">Mileage</h3>
             </div>
-            <p>TO BE CONTINUED</p>
+            <div class="form mainForm">
+                <p>TO BE CONTINUED</p>
+            </div>
             <div class="header-bar">
                 <h3 id="additional">Additional</h3>
             </div>
-            <p>TO BE CONTINUED</p>
+            <div class="form mainForm">
+                <p>TO BE CONTINUED</p>
+            </div>
         </div>
     </div>
 </div>
