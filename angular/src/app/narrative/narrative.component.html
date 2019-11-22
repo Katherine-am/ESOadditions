@@ -113,57 +113,54 @@
 </div>
 
 
-<div class="modal fade col-8 offset-2" id="narrativeModal" tabindex="-1" role="dialog">
+<div class="modal fade" id="narrativeModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="form col-12">
-                    <div class="modal-title">
-                        <div class="form-group row modalTitle">
-                            <p>Narrative</p>
-                            <button type="button" class="btn btn-success offset-10" data-dismiss="modal">OK</button>
+                <div class="form-group row col-12 narrativeHeader">
+                    <h3>Narrative</h3>
+                    <button type="button" class="btn btn-success okButton" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row noMargin">
+                    <!-- PERSISTED NARRATIVE DATA -->
+                    <div class="col-6">
+                        <div class="card" id="flex">
+                            <div class="card-body" id="scrollable">
+                                <h4>INCIDENT</h4>
+                                <ul class="list-group list-group-flush">
+                                    <li>Incident Number: {{incident.incidentNumber}}</li>
+                                    <li>Run Type: {{incident.runType}}</li>
+                                    <li>Priority: {{incident.priority}}</li>
+                                </ul>
+                                <h4>DEMOGRAPHICS</h4>
+                                <ul class="list-group list-group-flush">
+                                    <li>Full Name: {{demographics.firstName}} {{demographics.middleName}} {{demographics.lastName}}</li>
+                                    <li>SSN: {{demographics.SSN}}</li>
+                                    <li>Age: {{demographics.Age}}</li>
+                                    <li>DOB: {{demographics.DOB}}</li>
+                                    <li>Weight: {{demographics.weight}}</li>
+                                    <li>Gender: {{demographics.gender}}</li>
+                                    <li>Race: {{demographics.race}}</li>
+                                </ul>
+                                <h4>VITALS</h4>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="modal-body">
-                        <div class="row noMargin">
-                            <div class="col-6">
-                                <form (submit)="subjectiveNarrative()">
-                                    <div class="form-group row modalBody">
-                                        <textarea [(ngModel)]="newSubNarrative.narrative" name="narrative" class="form-control" placeholder="Start typing..." required #narrative="ngModel"></textarea>
-                                        <div class="text-center">
-                                            <input type="submit" class="btn btn-sm btn-success" value="Enter">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-6">
-                                <div class="card" id="flex">
-                                    <!-- FIX MODAL HEIGHT KATIE -->
-                                    <div class="card-body" id="scrollable">
-                                        <h3>Incident</h3>
-                                        <ul class="list-group list-group-flush">
-                                            <li>Incident Number: {{incident.incidentNumber}}</li>
-                                            <li>Run Type: {{incident.runType}}</li>
-                                            <li>Priority: {{incident.priority}}</li>
-                                        </ul>
-                                        <h3>Demographics</h3>
-                                        <ul class="list-group list-group-flush">
-                                            <li>Full Name: {{demographics.firstName}} {{demographics.middleName}} {{demographics.lastName}}</li>
-                                            <li>SSN: {{demographics.SSN}}</li>
-                                            <li>Age: {{demographics.Age}}</li>
-                                            <li>DOB: {{demographics.DOB}}</li>
-                                            <li>Weight: {{demographics.weight}}</li>
-                                            <li>Gender: {{demographics.gender}}</li>
-                                            <li>Race: {{demographics.race}}</li>
-                                        </ul>
-                                        <h3>Vitals</h3>
-                                        <ul>
-                                            <li></li>
-                                        </ul>
-                                    </div>
+                    <!-- SUBJECTIVE NARRATIVE FORM -->
+                    <div class="col-6">
+                        <form (submit)="subjectiveNarrative()">
+                            <div class="form-group row modalBody">
+                                <textarea [(ngModel)]="newSubNarrative.narrative" name="narrative" class="form-control" placeholder="Start typing..." rows="22" required #narrative="ngModel"></textarea>
+                                <div class="offset-10">
+                                    <input type="submit" class="btn btn-success" id="enter" value="Enter">
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
