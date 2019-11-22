@@ -18,9 +18,9 @@
 <footer class="footer">
     <div *ngIf="addvitals">
         <div class="footerButtonGroup">
-            <button class="btn btn-sm btn-primary footerButtonDirection" [routerLink]="['/narrative-home/'+id]">Next</button>
+            <button class="btn btn-sm btn-danger footerButtonDirection" [routerLink]="['/vitals-home/'+id]">◀ Back</button>
             <button class="btn btn-sm btn-success footerButton" (click)="showEditFormFlow(editpatient.id)">Airway</button>
-            <button class="btn btn-sm btn-danger footerButtonDirection" [routerLink]="['/vitals-home/'+id]">Go Back</button>
+            <button class="btn btn-sm btn-primary footerButtonDirection" [routerLink]="['/narrative-home/'+id]">Next ▶</button>
         </div>
     </div>
 </footer>
