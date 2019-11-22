@@ -43,6 +43,7 @@ export class NarrativeComponent implements OnInit {
       this.demographics = this.onepatient.demographics[0]
       this.incident = this.onepatient.incident[0]
       this.vitals = this.onepatient.vitals[0]
+      this.flowchart = this.onepatient.flowchart[0]
     });
   }
   subjectiveNarrative(){
