@@ -8,7 +8,7 @@
 }
 
 .footerButtonGroup {
-    margin-left: 35%;
+    margin-left: 31.5%;
 }
 
 .footerButton {
@@ -74,4 +74,11 @@ small {
 
 h3 {  
     font-weight: 200;
+}
+
+.btn-secondary {
+    width: 100px;
+    border-radius: 2rem;
+    border-color: #b5b8b9;
+    color: black;
 }
