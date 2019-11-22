@@ -1,7 +1,5 @@
 <br>
 <br>
-<br>
-<br>
 <div class="container">
     <div class="col-4 offset-4">
         <table class="table table-light">
@@ -13,24 +11,15 @@
             </tbody>
         </table>
     </div>
-<<<<<<< HEAD
     <div *ngIf="openform">hhhh</div>
 </div>
 
-{{id}}
-{{editpatient}}
-<br>
-<br>
-<br>
-<br>
-<div *ngIf="addvitals">
 
+
+<div *ngIf="addvitals">
     <button (click)="showEditFormFlow(editpatient.id)">Airway</button>
 </div>
-<br>
-<br>
-<br>
-<br>
+
 <div class="row">
 
     <div class="col">
@@ -69,7 +58,7 @@
                                 <option value="NO">No</option>
                             </select>
                         </label>
-
+                        <br>
                         <label for="">Successful
                             <select name="OPAsuccessful" [(ngModel)]="editpatient.OPAsuccessful"
                                 #OPAsuccessful="ngModel">
@@ -77,27 +66,31 @@
                                 <option value="NO">No</option>
                             </select>
                         </label>
+                        <br>
                         <label for="">Comments
                             <input type="text" name="OPAcomments" [(ngModel)]="editpatient.OPAcomments" required
                                 minlength="2" maxlength="24" #OPAcomments="ngModel" />
                         </label>
+                        <br>
                         <h1>General</h1>
+                        <br>
                         <label for="">Provider
                             <input type="text" name="OPAGeneralprovider" [(ngModel)]="editpatient.OPAGeneralprovider"
                                 required minlength="2" maxlength="24" #OPAGeneralprovider="ngModel" />
                         </label>
-
+                        <br>
                         <label for="">Patient Response
 
 
                             <input type="radio" name="OPAGeneralresponse" [(ngModel)]="editpatient.OPAGeneralresponse"
-                                #OPAGeneralresponse="ngModel" value="Unchanged"> Unchanged<br>
+                                #OPAGeneralresponse="ngModel" value="Unchanged"> Unchanged
                             <input type="radio" name="OPAGeneralresponse" [(ngModel)]="editpatient.OPAGeneralresponse"
-                                #OPAGeneralresponse="ngModel" value="Improved"> Improved<br>
+                                #OPAGeneralresponse="ngModel" value="Improved"> Improved
                             <input type="radio" name="OPAGeneralresponse" [(ngModel)]="editpatient.OPAGeneralresponse"
                                 #OPAGeneralresponse="ngModel" value="Worse"> Worse
 
                         </label>
+                        <br>
                         <label for="">Complication
                             <select name="OPAGeneralcomplication" [(ngModel)]="editpatient.OPAGeneralcomplication"
                                 #OPAGeneralcomplication="ngModel">
@@ -110,7 +103,56 @@
                     </div>
                     <!-- --------------------- -->
                     <div *ngIf="pulsform" class="col">
-                        <h1>Orogastric</h1>
+                        <h1>Orogastric Tube</h1>
+                        <label for="">Prior to Arrivall
+                            <input type="radio" name="oroprior" [(ngModel)]="editpatient.oroprior" #oroprior="ngModel"
+                                value="Yes"> Yes
+                            <input type="radio" name="oroprior" [(ngModel)]="editpatient.oroprior" #oroprior="ngModel"
+                                value="No"> No<br>
+                        </label>
+                        <br>
+                        <label for="">Size
+                            <input type="number" name="orosize" [(ngModel)]="editpatient.orosize" #orosize="ngModel" />
+                        </label>
+                        <label for="">Placed At
+                            <input type="number" name="oroplacedAt" [(ngModel)]="editpatient.oroplacedAt"
+                                #oroplacedAt="ngModel" />
+                        </label>
+                        <br>
+                        <label for="">Successful
+                            <input type="radio" name="orosuccessful" [(ngModel)]="editpatient.orosuccessful"
+                                #orosuccessful="ngModel" value="Yes"> Yes
+                            <input type="radio" name="orosuccessful" [(ngModel)]="editpatient.orosuccessful"
+                                #orosuccessful="ngModel" value="No"> No<br>
+                        </label>
+                        <br>
+                        <label for="">Comments
+                            <input type="text" name="orocomments" [(ngModel)]="editpatient.orocomments" required
+                                minlength="2" maxlength="24" #orocomments="ngModel" />
+                        </label>
+                        <h1>General</h1>
+                        <label for="">Provider
+                            <input type="text" name="oroprovider" [(ngModel)]="editpatient.oroprovider" required
+                                minlength="2" maxlength="24" #oroprovider="ngModel" />
+                        </label>
+
+                        <label for="">Patient Response
+                            <input type="radio" name="ororesponse" [(ngModel)]="editpatient.ororesponse"
+                                #ororesponse="ngModel" value="Unchanged"> Unchanged
+                            <input type="radio" name="ororesponse" [(ngModel)]="editpatient.ororesponse"
+                                #ororesponse="ngModel" value="Improved"> Improved
+                            <input type="radio" name="ororesponse" [(ngModel)]="editpatient.ororesponse"
+                                #ororesponse="ngModel" value="Worse"> Worse
+                        </label>
+                        <label for="">Complication
+                            <select name="orocomplication" [(ngModel)]="editpatient.orocomplication"
+                                #orocomplication="ngModel">
+                                <option value="None">None</option>
+                                <option value="Apnea">Apnea</option>
+                                <option value="Bleeding">Bleeding</option>
+                                <option value="Other">Other Because its a Long Listtttttttt.....</option>
+                            </select>
+                        </label>
 
                     </div>
                     <!-- --------------------- -->
@@ -122,10 +164,6 @@
                     <!-- --------------------- -->
                 </div>
 
-
-                <!-- rrate: { type: Number },
-                rquality: { type: String },
-                rrhythm: { type: String } -->
 
                 <input (click)="onEditFlow()" type="submit" value="Add" />
             </form>
@@ -140,7 +178,8 @@
 
         <!-- *ngFor="let rest of allrest; let i = index" -->
         <div *ngFor="let i of info.flowchart;">
-            <h3 *ngIf="i.OPAprior != null || i.OPAsuccessful != null || i.OPAcomments != null ">
+            <h3
+                *ngIf="i.OPAprior != null || i.OPAsuccessful != null || i.OPAcomments != null || i.OPAGeneralprovider != null || i.OPAGeneralresponse != null || i.OPAGeneralcomplication != null">
                 AIRWAY OPA</h3>
             <p *ngIf="i.OPAprior != null">Prior: {{i.OPAprior}}</p>
 
@@ -151,18 +190,20 @@
             <p *ngIf="i.OPAGeneralcomplication != null">Complication: {{i.OPAGeneralcomplication}}</p>
 
             <p>-------------------</p>
+            <h3
+                *ngIf="i.oroprior != null || i.orosize != null || i.oroplacedAt != null || i.orosuccessful != null || i.orocomments != null || i.oroprovider != null || i.ororesponse != null || i.orocomplication != null">
+                Orogastric Tube</h3>
+            <p *ngIf="i.oroprior != null">Prior: {{i.oroprior}}</p>
+            <p *ngIf="i.orosize != null">Size: {{i.orosize}}</p>
+            <p *ngIf="i.oroplacedAt != null">Placed At: {{i.oroplacedAt}}</p>
+            <p *ngIf="i.orosuccessful != null">successful: {{i.orosuccessful}}</p>
+            <p *ngIf="i.orocomments != null">Comments: {{i.orocomments}}</p>
+
+            <p *ngIf="i.oroprovider != null">Provider: {{i.oroprovider}}</p>
+            <p *ngIf="i.ororesponse != null">Patient Response: {{i.ororesponse}}</p>
+            <p *ngIf="i.orocomplication != null">Complication: {{i.orocomplication}}</p>
+
         </div>
-        <!-- 
-      <--  OPAprior: { type: String },
-        OPAsize: { type: Number },
-        OPAPlaceAt: { type: Number },
-        OPAsuccessful: { type: Boolean },ddd
-        OPAcomments: { type: String },
-        // general: [GeneralSchema]
-        OPAGeneralresponse: { type: String },
-        OPAGeneralcomplication: { type: String },
-        OPAGeneralmedicalcontrol: { type: String },
-        OPAGeneralphysicianRef: { type: String }, -->
 
         <div *ngFor="let i of info.vitals;">
             <ul>
@@ -221,10 +262,6 @@
     OPAGeneralphysicianRef: { type: String }, -->
 <!-- -------------------------- -->
 <footer>
-=======
-</div> -->
-<footer class="footer">
->>>>>>> ec32a08e6fe4f74701627842606332f1513d5c77
     <div class="container text-center">
         <div class="btn-group" role="group">
             <!-- <button click="showTreatments('')" class="btn btn-success">Airway</button>

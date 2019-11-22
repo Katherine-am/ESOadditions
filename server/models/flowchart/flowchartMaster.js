@@ -27,15 +27,22 @@ const FlowchartSchema = new mongoose.Schema({
     OPAGeneralphysicianRef: { type: String },
     // end of OPA
 
-    orogastricTube: [
-        { time: { type: Date } },
-        { date: { type: Date } },
-        { size: { type: Number } },
-        { placedAt: { type: Number } },
-        { successful: { type: Boolean } },
-        { comments: { type: String } },
-        // { general: [GeneralSchema] }
-    ],
+    // orogastricTube: [
+    oroprior: { type: String },
+    orotime: { type: Date },
+    orodate: { type: Date },
+    orosize: { type: Number },
+    oroplacedAt: { type: Number },
+    orosuccessful: { type: String },
+    orocomments: { type: String },
+    // general: [GeneralSchema]
+    oroprovider: { type: String },
+    ororesponse: { type: String },
+    orocomplication: { type: String },
+    oromedicalcontrol: { type: String },
+    orophysicianRef: { type: String },
+    // { general: [GeneralSchema] }
+    // ],
 
 
 
